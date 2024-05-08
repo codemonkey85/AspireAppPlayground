@@ -25,9 +25,3 @@ public class WeatherApiClient(HttpClient httpClient)
     return forecasts?.ToArray() ?? [];
   }
 }
-
-// ReSharper disable once ClassNeverInstantiated.Global
-public record WeatherForecast(DateOnly Date, int TemperatureC, string? Summary)
-{
-  public int TemperatureF => 32 + (int)(TemperatureC / 0.5556);
-}

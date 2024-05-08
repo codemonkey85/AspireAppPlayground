@@ -7,13 +7,15 @@ public static class Extensions
   // ReSharper disable once UnusedMethodReturnValue.Global
   public static IHostApplicationBuilder AddServiceDefaults(this IHostApplicationBuilder builder)
   {
+    var services = builder.Services;
+
     builder.ConfigureOpenTelemetry();
 
     builder.AddDefaultHealthChecks();
 
-    builder.Services.AddServiceDiscovery();
+    services.AddServiceDiscovery();
 
-    builder.Services.ConfigureHttpClientDefaults(http =>
+    services.ConfigureHttpClientDefaults(http =>
     {
       // Turn on resilience by default
       http.AddStandardResilienceHandler();

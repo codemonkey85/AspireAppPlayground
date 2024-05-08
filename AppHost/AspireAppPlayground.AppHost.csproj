@@ -10,8 +10,8 @@
 	</PropertyGroup>
 
 	<ItemGroup>
-		<ProjectReference Include="..\AspireAppPlayground.ApiService\AspireAppPlayground.ApiService.csproj" />
-		<ProjectReference Include="..\AspireAppPlayground.Web\AspireAppPlayground.Web.csproj" />
+		<ProjectReference Include="..\ApiService\AspireAppPlayground.ApiService.csproj" />
+		<ProjectReference Include="..\Web\AspireAppPlayground.Web.csproj" />
 	</ItemGroup>
 
 	<ItemGroup>

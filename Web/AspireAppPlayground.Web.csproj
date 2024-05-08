@@ -7,7 +7,8 @@
 	</PropertyGroup>
 
 	<ItemGroup>
-		<ProjectReference Include="..\AspireAppPlayground.ServiceDefaults\AspireAppPlayground.ServiceDefaults.csproj" />
+		<ProjectReference Include="..\Shared\AspireAppPlayground.Shared.csproj" />
+		<ProjectReference Include="..\ServiceDefaults\AspireAppPlayground.ServiceDefaults.csproj" />
 	</ItemGroup>
 
 </Project>

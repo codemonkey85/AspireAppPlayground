@@ -42,12 +42,3 @@ app.MapGet("/weatherforecast", () =>
 app.MapDefaultEndpoints();
 
 app.Run();
-
-#pragma warning disable IDE0079
-[SuppressMessage("ReSharper", "NotAccessedPositionalProperty.Global")]
-#pragma warning restore IDE0079
-internal record WeatherForecast(DateOnly Date, int TemperatureC, string? Summary)
-{
-  // ReSharper disable once UnusedMember.Global
-  public int TemperatureF => 32 + (int)(TemperatureC / 0.5556);
-}
