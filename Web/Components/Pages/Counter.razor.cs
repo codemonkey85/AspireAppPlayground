@@ -3,7 +3,7 @@
 // ReSharper disable once UnusedType.Global
 public partial class Counter
 {
-  private int currentCount;
+    private int currentCount;
 
-  private void IncrementCount() => currentCount++;
+    private void IncrementCount() => currentCount++;
 }

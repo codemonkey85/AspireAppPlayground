@@ -1,1 +1,2 @@
-﻿global using AspireAppPlayground.Shared;
+﻿global using AspireAppPlayground.ApiService;
+global using AspireAppPlayground.Shared;

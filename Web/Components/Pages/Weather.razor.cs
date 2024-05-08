@@ -3,8 +3,8 @@
 // ReSharper disable once UnusedType.Global
 public partial class Weather
 {
-  private WeatherForecast[]? forecasts;
+    private WeatherForecast[]? forecasts;
 
-  protected override async Task OnInitializedAsync() =>
-    forecasts = await WeatherApi.GetWeatherAsync();
+    protected override async Task OnInitializedAsync() =>
+        forecasts = await WeatherApi.GetWeatherAsync();
 }

@@ -2,26 +2,26 @@ namespace AspireAppPlayground.Web;
 
 public class WeatherApiClient(HttpClient httpClient)
 {
-  public async Task<WeatherForecast[]> GetWeatherAsync(int maxItems = 10, CancellationToken cancellationToken = default)
-  {
-    List<WeatherForecast>? forecasts = null;
-
-    await foreach (var forecast in httpClient.GetFromJsonAsAsyncEnumerable<WeatherForecast>("/weatherforecast", cancellationToken))
+    public async Task<WeatherForecast[]> GetWeatherAsync(int maxItems = 10, CancellationToken cancellationToken = default)
     {
-      if (forecasts?.Count >= maxItems)
-      {
-        break;
-      }
+        List<WeatherForecast>? forecasts = null;
 
-      if (forecast is null)
-      {
-        continue;
-      }
+        await foreach (var forecast in httpClient.GetFromJsonAsAsyncEnumerable<WeatherForecast>($"/{Constants.WeatherForecastEndpoint}", cancellationToken))
+        {
+            if (forecasts?.Count >= maxItems)
+            {
+                break;
+            }
 
-      forecasts ??= [];
-      forecasts.Add(forecast);
+            if (forecast is null)
+            {
+                continue;
+            }
+
+            forecasts ??= [];
+            forecasts.Add(forecast);
+        }
+
+        return forecasts?.ToArray() ?? [];
     }
-
-    return forecasts?.ToArray() ?? [];
-  }
 }

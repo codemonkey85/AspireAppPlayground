@@ -1,11 +1,11 @@
 var builder = DistributedApplication.CreateBuilder(args);
 
 var apiService = builder
-  .AddProject<Projects.AspireAppPlayground_ApiService>("apiservice");
+    .AddProject<Projects.AspireAppPlayground_ApiService>("apiservice");
 
 builder
-  .AddProject<Projects.AspireAppPlayground_Web>("webfrontend")
-  .WithExternalHttpEndpoints()
-  .WithReference(apiService);
+    .AddProject<Projects.AspireAppPlayground_Web>("webfrontend")
+    .WithExternalHttpEndpoints()
+    .WithReference(apiService);
 
 builder.Build().Run();
